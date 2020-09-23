@@ -1,0 +1,34 @@
+#
+#User specific aliases and functions
+#
+
+alias ls='ls -G'
+alias la='ls -A'
+alias ll='ls -lrt'
+alias LS='ls'
+alias CD='cd'
+
+alias cd..='cd ..'
+alias cd~='cd ~'
+
+alias grep='grep --color=auto --ignore-case'
+alias fgrep='fgrep --color=auto --ignore-case'
+alias egrep='egrep --color=auto --ignore-case'
+
+alias rm='rm -i'
+alias mv='mv -i'
+alias cp='cp -i'
+
+HISTCONTROL=ignoreboth
+
+#for git
+#git completion
+if [ -f "/usr/local/etc/profile.d/bash_completion.sh" ]; then
+    source /usr/local/etc/profile.d/bash_completion.sh
+fi
+#git prompt
+if [ -f "/usr/local/etc/profile.d/git-prompt.sh" ]; then
+    source /usr/local/etc/profile.d/git-prompt.sh
+fi
+
+export PS1='[\[\e[0;36m\]\u@\h:$PWD$(__git_ps1 " \[\e[0;32m\](\[\e[0;36m\]%s\[\e[0;32m\])\[\e[0m\]")\[\e[0m\]]\D{ %F %T}\n\$ '
